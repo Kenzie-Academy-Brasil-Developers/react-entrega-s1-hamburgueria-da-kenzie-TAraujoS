@@ -1,21 +1,27 @@
 import Products from "../Products/Products";
+import { Section } from "./styles";
 
-function ProductsList({ products, setProducts, setCurrentSale, currentSale }) {
+function ProductsList({
+  filteredProducts,
+  setProducts,
+  setCurrentSale,
+  currentSale,
+}) {
   return (
-    <div>
+    <Section>
       <ul>
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <Products
             key={product.id}
             product={product}
             setProducts={setProducts}
-            products={products}
+            filteredProducts={filteredProducts}
             setCurrentSale={setCurrentSale}
             currentSale={currentSale}
           />
         ))}
       </ul>
-    </div>
+    </Section>
   );
 }
 

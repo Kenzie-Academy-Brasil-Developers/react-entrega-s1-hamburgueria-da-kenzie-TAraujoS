@@ -1,3 +1,6 @@
+import { LiCart } from "./styles";
+import trash from "../../assets/trash.svg";
+
 function CartProducts({ product, currentSale, setCurrentSale }) {
   const { id, img, name, category } = product;
 
@@ -7,15 +10,19 @@ function CartProducts({ product, currentSale, setCurrentSale }) {
   };
 
   return (
-    <li className="listedProduct">
+    <LiCart className="listedProduct">
       <img src={img} alt="" />
       <div>
         <p>{name}</p>
         <span>{category}</span>
-        <span> </span>
       </div>
-      <button onClick={() => removeItem(id)}>Remover</button>
-    </li>
+      <img
+        className="trash"
+        src={trash}
+        onClick={() => removeItem(id)}
+        alt="Lixeira"
+      />
+    </LiCart>
   );
 }
 

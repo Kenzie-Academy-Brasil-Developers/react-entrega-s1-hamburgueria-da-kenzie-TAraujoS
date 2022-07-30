@@ -1,24 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Cart from "./components/Cart/Cart";
 import Header from "./components/Header/Header";
-import ProductsList from "./components/ProductsList/ProdList";
+import Main from "./components/Main/Main";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
-
-  const showProducts = (inputValue) => {
-    const filterProd = products.filter((product) => {
-      return (
-        inputValue === product.name.toLowerCase() ||
-        inputValue === product.category.toLowerCase()
-      );
-    });
-    setFilteredProducts(filterProd);
-  };
 
   useEffect(() => {
     fetch("https://hamburgueria-kenzie-json-serve.herokuapp.com/products")
@@ -27,24 +15,18 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    setFilteredProducts(products);
+  }, [products]);
+
   return (
     <div className="App">
-      <Header
+      <Header setFilteredProducts={setFilteredProducts} products={products} />
+      <Main
         filteredProducts={filteredProducts}
-        setFilteredProducts={setFilteredProducts}
-        showProducts={showProducts}
-      />
-      <ProductsList
-        products={products}
         setProducts={setProducts}
         setCurrentSale={setCurrentSale}
         currentSale={currentSale}
-      />
-      <Cart
-        currentSale={currentSale}
-        setCurrentSale={setCurrentSale}
-        cartTotal={cartTotal}
-        setCartTotal={setCartTotal}
       />
     </div>
   );

@@ -1,13 +1,14 @@
 import CartProducts from "../CartProducts/CartProd";
 import CartTotal from "../CartTotal/Total";
+import { Aside } from "./styles";
 
-function Cart({ currentSale, setCurrentSale, cartTotal, setCartTotal }) {
+function Cart({ currentSale, setCurrentSale }) {
   return (
-    <section className="cartContainer">
+    <Aside>
       <h3>Carrinho de Compras</h3>
-      <div>
+      <div className="cartContainer">
         <ul className="cartList">
-          {currentSale.length > 0 ? (
+          {currentSale.length ? (
             currentSale.map((product) => {
               return (
                 <CartProducts
@@ -20,21 +21,16 @@ function Cart({ currentSale, setCurrentSale, cartTotal, setCartTotal }) {
             })
           ) : (
             <div className="cleanCart">
-              <h2>Carrinho Vazio</h2>
+              <h2>Sua sacola esta vazia</h2>
               <p>Adicione Itens</p>
             </div>
           )}
         </ul>
       </div>
-      <div className="divCartTotal">
-        <CartTotal
-          cartTotal={cartTotal}
-          setCartTotal={setCartTotal}
-          setCurrentSale={setCurrentSale}
-          currentSale={currentSale}
-        />
-      </div>
-    </section>
+      {currentSale.length > 0 && (
+        <CartTotal setCurrentSale={setCurrentSale} currentSale={currentSale} />
+      )}
+    </Aside>
   );
 }
 

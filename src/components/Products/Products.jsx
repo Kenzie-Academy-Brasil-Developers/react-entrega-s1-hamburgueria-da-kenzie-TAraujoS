@@ -1,14 +1,20 @@
-function Products({ product, currentSale, products, setCurrentSale }) {
+import { ListProducts } from "./styles";
+
+function Products({ filteredProducts, product, currentSale, setCurrentSale }) {
   const { id, img, name, category, price } = product;
 
   const handleClick = (id) => {
-    const addProduct = products.find((element) => element.id === id);
-    setCurrentSale([...currentSale, addProduct]);
+    const addProduct = filteredProducts.find((element) => element.id === id);
+    if (!currentSale.includes(addProduct)) {
+      setCurrentSale([...currentSale, addProduct]);
+    }
   };
 
   return (
-    <li>
-      <img src={img} alt="" />
+    <ListProducts>
+      <figure>
+        <img src={img} alt="" />
+      </figure>
       <div>
         <h2>{name}</h2>
         <p>{category}</p>
@@ -18,9 +24,9 @@ function Products({ product, currentSale, products, setCurrentSale }) {
             currency: "BRL",
           }).format(price)}
         </span>
+        <button onClick={() => handleClick(id)}>Adicionar</button>
       </div>
-      <button onClick={() => handleClick(id)}>Adicionar</button>
-    </li>
+    </ListProducts>
   );
 }
 

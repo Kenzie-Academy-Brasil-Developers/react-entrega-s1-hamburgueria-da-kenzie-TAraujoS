@@ -1,16 +1,30 @@
-function InputSearch({ filteredProducts, setFilteredProducts, showProducts }) {
+import { FormInput } from "./styles";
+
+function InputSearch({ setFilteredProducts, products }) {
+  function showProducts(item) {
+    const filterProd = products.filter(
+      (product) =>
+        product.name.toLowerCase().includes(item.toLowerCase()) ||
+        product.category.toLowerCase().includes(item.toLowerCase())
+    );
+    setFilteredProducts(filterProd);
+  }
   return (
-    <div>
+    <FormInput>
       <input
         type="text"
-        value={filteredProducts}
-        required
-        className="descriptionInput"
         placeholder="Digitar Pesquisa"
-        onChange={(event) => setFilteredProducts(event.target.value)}
+        onChange={(event) => showProducts(event.target.value)}
       />
-      <button onClick={() => showProducts(filteredProducts)}>Pesquisar</button>
-    </div>
+      <button
+        onClick={(event) => {
+          showProducts(event.target.value);
+          event.preventDefault();
+        }}
+      >
+        Pesquisar
+      </button>
+    </FormInput>
   );
 }
 export default InputSearch;

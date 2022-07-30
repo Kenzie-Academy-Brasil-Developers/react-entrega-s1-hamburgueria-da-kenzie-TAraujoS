@@ -1,15 +1,15 @@
+import { Container } from "./styles";
 import logo from "../../assets/Logo.svg";
 import InputSearch from "../InputSearch/Input";
-function Header({ filteredProducts, setFilteredProducts, showProducts }) {
+function Header({ products, setFilteredProducts }) {
   return (
-    <header>
+    <Container>
       <img src={logo} alt="" />
       <InputSearch
-        filteredProducts={filteredProducts}
+        products={products}
         setFilteredProducts={setFilteredProducts}
-        showProducts={showProducts}
       />
-    </header>
+    </Container>
   );
 }
 
