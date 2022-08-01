@@ -8,10 +8,17 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
-  padding: 0px 6rem;
+  padding: 0 6rem;
   background-color: var(--gray);
 
   img {
     width: 150px;
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 7rem;
+    padding: 0.5rem 4rem;
   }
 `;

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   width: 70%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +15,13 @@ export const Section = styled.section`
     row-gap: 12px;
   }
 
-  @media screen and (max-width: 900px) {
+  @media (max-width: 1000px) {
+    width: 100%;
+
+    ul {
+      overflow-x: auto;
+      width: 90%;
+      flex-wrap: nowrap;
+    }
   }
 `;

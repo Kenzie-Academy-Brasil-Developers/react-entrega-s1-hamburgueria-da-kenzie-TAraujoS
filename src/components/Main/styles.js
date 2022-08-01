@@ -6,4 +6,11 @@ export const ContainerMain = styled.main`
   width: 100%;
   justify-content: space-around;
   padding: 0 4%;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    justify-content: flex-start;
+  }
 `;

@@ -55,7 +55,6 @@ export const Aside = styled.aside`
 
   .cartList {
     display: flex;
-    flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 15px;
@@ -64,5 +63,11 @@ export const Aside = styled.aside`
     overflow-y: auto;
     padding: 8px;
     width: 100%;
+  }
+
+  @media (max-width: 1000px) {
+    height: 360px;
+    width: 55%;
+    min-width: 300px;
   }
 `;

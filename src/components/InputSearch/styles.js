@@ -35,4 +35,10 @@ export const FormInput = styled.form`
     color: var(--white);
     cursor: pointer;
   }
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    height: 55%;
+    max-width: 400px;
+  }
 `;

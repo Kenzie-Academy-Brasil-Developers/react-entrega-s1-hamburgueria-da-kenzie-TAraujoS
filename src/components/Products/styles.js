@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const ListProducts = styled.li`
-  height: 340px;
-  width: 250px;
+  height: 320px;
+  width: 30%;
+  max-width: 250px;
   display: flex;
   flex-direction: column;
 
@@ -71,5 +72,9 @@ export const ListProducts = styled.li`
   div button:hover {
     transition: 0.4s;
     color: #93d7af;
+  }
+
+  @media (max-width: 1000px) {
+    min-width: 250px;
   }
 `;
