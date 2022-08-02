@@ -1,4 +1,7 @@
 import { ListProducts } from "./styles";
+import React from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Products({ filteredProducts, product, currentSale, setCurrentSale }) {
   const { id, img, name, category, price } = product;
@@ -7,6 +10,13 @@ function Products({ filteredProducts, product, currentSale, setCurrentSale }) {
     const addProduct = filteredProducts.find((element) => element.id === id);
     if (!currentSale.includes(addProduct)) {
       setCurrentSale([...currentSale, addProduct]);
+      toast.success("Produto adicionado", {
+        autoClose: 2000,
+      });
+    } else {
+      toast.error("Produto já foi adicionado!", {
+        autoClose: 2000,
+      });
     }
   };
 
