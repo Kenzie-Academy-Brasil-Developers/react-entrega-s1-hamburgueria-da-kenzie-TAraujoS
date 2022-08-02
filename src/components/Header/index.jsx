@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 import logo from "../../assets/Logo.svg";
-import InputSearch from "../InputSearch/Input";
+import InputSearch from "../InputSearch";
 function Header({ products, setFilteredProducts }) {
   return (
     <Container>

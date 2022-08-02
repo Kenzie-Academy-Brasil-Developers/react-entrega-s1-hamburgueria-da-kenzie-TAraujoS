@@ -1,5 +1,5 @@
-import CartProducts from "../CartProducts/CartProd";
-import CartTotal from "../CartTotal/Total";
+import CartProducts from "../CartProducts";
+import CartTotal from "../CartTotal";
 import { Aside } from "./styles";
 
 function Cart({ currentSale, setCurrentSale }) {

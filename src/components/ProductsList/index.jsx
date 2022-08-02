@@ -1,4 +1,4 @@
-import Products from "../Products/Products";
+import Products from "../Products";
 import { Section } from "./styles";
 
 function ProductsList({

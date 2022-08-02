@@ -1,4 +1,4 @@
-import ProductsList from "../ProductsList/ProdList";
+import ProductsList from "../ProductsList";
 import Cart from "../Cart/Cart";
 import { ContainerMain } from "./styles";
 
