@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
+import Header from "./components/Header/index";
+import Main from "./components/Main/index";
 import { ToastContainer } from "react-toastify";
 
 function App() {

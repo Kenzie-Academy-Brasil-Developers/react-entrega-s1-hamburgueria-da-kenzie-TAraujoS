@@ -10,6 +10,10 @@ export const ListProducts = styled.li`
   border-radius: 5px;
   border: 2px solid #e0e0e0;
 
+  &:hover {
+    border: solid 2px var(--graytext);
+  }
+
   figure {
     background-color: var(--gray);
     width: 100%;
@@ -71,7 +75,7 @@ export const ListProducts = styled.li`
 
   div button:hover {
     transition: 0.4s;
-    color: #93d7af;
+    background-color: #93d7af;
   }
 
   @media (max-width: 1000px) {

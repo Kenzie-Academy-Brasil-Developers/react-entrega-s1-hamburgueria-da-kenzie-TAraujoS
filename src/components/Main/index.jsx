@@ -1,5 +1,5 @@
 import ProductsList from "../ProductsList";
-import Cart from "../Cart/Cart";
+import Cart from "../Cart/index";
 import { ContainerMain } from "./styles";
 
 function Main({ filteredProducts, setProducts, setCurrentSale, currentSale }) {

@@ -43,5 +43,10 @@ export const TotalDiv = styled.div`
     font-size: 1rem;
     line-height: 19px;
     border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      border: solid 2px var(--graytext);
+    }
   }
 `;

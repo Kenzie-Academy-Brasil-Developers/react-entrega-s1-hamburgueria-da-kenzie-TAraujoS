@@ -34,6 +34,10 @@ export const FormInput = styled.form`
     border-radius: 8px;
     color: var(--white);
     cursor: pointer;
+
+    &:hover {
+      background-color: #93d7af;
+    }
   }
 
   @media (max-width: 1000px) {
