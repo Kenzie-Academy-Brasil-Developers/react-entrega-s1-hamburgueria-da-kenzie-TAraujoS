@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  width: 70%;
+  width: 55%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  //align-items: center;
 
   ul {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 70%;
     flex-wrap: wrap;
     column-gap: 20px;
     row-gap: 12px;
@@ -20,6 +20,7 @@ export const Section = styled.section`
 
     ul {
       overflow-x: auto;
+      height: 100%;
       width: 90%;
       flex-wrap: nowrap;
     }
